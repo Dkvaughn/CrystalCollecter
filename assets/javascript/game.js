@@ -7,11 +7,11 @@ var counter = 0;
 var images = ["./assets/images/bluerupee.jpg", "./assets/images/greenrupee.jpg", "./assets/images/purplerupee.jpg", "./assets/images/redrupee.jpg"];
 
 // Functions
-
+//random number generator
 	function randomTargetNumber () {
 		targetNumber = Math.floor(Math.random() * 102) + 19;
 	}
-
+//pulls the image sets their values and sizes
 	function resetRupees () {
 		for (var i = 0; i < images.length; i++) {
 			var rupee = $("<img>");
@@ -22,14 +22,14 @@ var images = ["./assets/images/bluerupee.jpg", "./assets/images/greenrupee.jpg",
 			$(".rupee-images").append(rupee);
 		}
 	}
-
+//resets all counters on the page
 	function resetHTML () {
 		$(".target-number").html(targetNumber);
 		$(".win-lose-counter").html("<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>");
 		$(".score-number").html(counter);
 		$(".rupee-images").empty();
 	}
-
+//resests whole page
 	function totalReset () {
 		randomTargetNumber ();
 		counter = 0;
@@ -62,6 +62,6 @@ var images = ["./assets/images/bluerupee.jpg", "./assets/images/greenrupee.jpg",
 			totalReset();
 		};
 	};
-
+// click event
 
 	$(document).on("click", ".rupee", rupeeClick);
